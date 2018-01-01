@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="GleamBill.View.AddCompany"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../UI_Style_Resources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Add Company" Style="{StaticResource ChildHeaders}"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Column One-->
+                <StackPanel Grid.Column="1">
+                    <TextBlock>Company Name</TextBlock>
+                    <TextBox x:Name="txtCompanyName" Text="{Binding BaseObject.CompanyName}"></TextBox>
+
+                    <TextBlock>Country</TextBlock>
+                    <ComboBox x:Name="CountryCombo"
+                              SelectedValue="{Binding BaseObject.CountryID}" 
+                              SelectedValuePath="ID"
+                              DisplayMemberPath="Name"
+                              ItemsSource="{Binding BaseObject.AllCountries}" SelectionChanged="ComboBox_SelectionChanged"  >
+
+                    </ComboBox>
+
+                    <TextBlock>Address</TextBlock>
+                    <TextBox x:Name="txtAddress" Visibility="{Binding IsVisible}" Text="{Binding BaseObject.Address}" Style="{StaticResource RichTextButton}"></TextBox>
+
+                    <TextBlock>State</TextBlock>
+                    <ComboBox x:Name="StateCombo" 
+                              SelectedValue="{Binding BaseObject.StateID}" 
+                              SelectedValuePath="ID"
+                              DisplayMemberPath="Name"
+                              ItemsSource="{Binding BaseObject.AllStates}" SelectionChanged="ComboBox_SelectionChanged" >
+                        <ComboBox.Style>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="IsEnabled" Value="True"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedIndex,ElementName=CountryCombo}" Value="-1">
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding SelectedValue,ElementName=CountryCombo}" Value="Select a country">
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ComboBox.Style>
+                    </ComboBox>
+
+                    <TextBlock>City</TextBlock>
+                    <ComboBox x:Name="CityCombo" SelectedValue="{Binding BaseObject.CityID}" 
+                              SelectedValuePath="ID"
+                              DisplayMemberPath="Name"
+                              ItemsSource="{Binding BaseObject.AllCities}" >
+                        <ComboBox.Style>
+                            <Style TargetType="ComboBox">
+                                <Setter Property="IsEnabled" Value="True"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding SelectedIndex,ElementName=StateCombo}" Value="-1">
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding SelectedValue,ElementName=StateCombo}" Value="Select a state">
+                                        <Setter Property="IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ComboBox.Style>
+                    </ComboBox>
+
+                    <TextBlock>PIN Code</TextBlock>
+                    <TextBox x:Name="txtPinCode" Text="{Binding BaseObject.PINCode}"></TextBox>
+
+                    <TextBlock>Company Phone</TextBlock>
+                    <TextBox x:Name="txtPhoneNumber" Text="{Binding BaseObject.CompanyPhone}"></TextBox>
+
+                    <TextBlock>Company Email</TextBlock>
+                    <TextBox x:Name="txtEmailAddress" Text="{Binding BaseObject.CompanyEmail}"></TextBox>
+
+                    <TextBlock>Company Website</TextBlock>
+                    <TextBox x:Name="txtWebsite" Text="{Binding BaseObject.CompanyWebsite}"></TextBox>
+
+
+                </StackPanel>
+
+                <!--Column Two-->
+                <StackPanel Grid.Column="3">
+                    <TextBlock>TIN/VAT</TextBlock>
+                    <TextBox x:Name="txtTinVAT" Text="{Binding BaseObject.TINVAT}"></TextBox>
+
+                    <TextBlock>GSTIN</TextBlock>
+                    <TextBox x:Name="txtGSTIN" Text="{Binding BaseObject.GSTIN}"></TextBox>
+
+                    <TextBlock>Service Tax/CST Tin No</TextBlock>
+                    <TextBox x:Name="txtServiceTax" Text="{Binding BaseObject.ServiceTaxCSTTinNo}"></TextBox>
+
+                    <TextBlock>Service Category</TextBlock>
+                    <ComboBox x:Name="cmboServiceCategory">
+                        <ComboBoxItem>Do Not Show</ComboBoxItem>
+                    </ComboBox>
+
+                    <TextBlock>PAN</TextBlock>
+                    <TextBox x:Name="txtPan" Text="{Binding BaseObject.PAN}"></TextBox>
+
+                    <TextBlock>Additional Details</TextBlock>
+                    <TextBox x:Name="txtAdditionalDetails" Text="{Binding BaseObject.AdditionalDetails}" Style="{StaticResource RichTextButton}"></TextBox>
+
+                    <TextBlock>Currency</TextBlock>
+                    <ComboBox x:Name="cmboCurrency" 
+                              SelectedValue="{Binding BaseObject.Currency}" ItemsSource="{Binding BaseObject.AllCurrency}">
+
+                    </ComboBox>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*">
+                            </ColumnDefinition>
+                            <ColumnDefinition Width="*">
+                            </ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0">
+                            <TextBlock>Logo</TextBlock>
+                            <Button x:Name="LogoButton" Click="Button_Click">Select</Button>
+                            <Button x:Name="RemoveButton" Click="Button_Click">Remove</Button>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <Image x:Name="logoimage" Height="150"/>
+                        </StackPanel>
+                    </Grid>
+
+                </StackPanel>
+            </Grid>
+            <Button Grid.Row="2" Name="SaveButton" Height="30" Width="150" Margin="0 0 10 0"  HorizontalAlignment="Right" Content="Save" Click="Button_Click"/>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

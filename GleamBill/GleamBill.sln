@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GleamBill", "GleamBill\GleamBill.csproj", "{D3653999-DDCA-42B0-9421-9338FD2F7738}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B3A7D93C-0A81-4145-B0DB-6A24BAB410E5} = {B3A7D93C-0A81-4145-B0DB-6A24BAB410E5}
+		{039ABA94-6947-4702-9504-98429AA4BD4D} = {039ABA94-6947-4702-9504-98429AA4BD4D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ErrorLogger", "ErrorLogger\ErrorLogger.csproj", "{B3A7D93C-0A81-4145-B0DB-6A24BAB410E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBManager", "DBManager\DBManager.csproj", "{039ABA94-6947-4702-9504-98429AA4BD4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3653999-DDCA-42B0-9421-9338FD2F7738}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3653999-DDCA-42B0-9421-9338FD2F7738}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3653999-DDCA-42B0-9421-9338FD2F7738}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3653999-DDCA-42B0-9421-9338FD2F7738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3A7D93C-0A81-4145-B0DB-6A24BAB410E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3A7D93C-0A81-4145-B0DB-6A24BAB410E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3A7D93C-0A81-4145-B0DB-6A24BAB410E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3A7D93C-0A81-4145-B0DB-6A24BAB410E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039ABA94-6947-4702-9504-98429AA4BD4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039ABA94-6947-4702-9504-98429AA4BD4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039ABA94-6947-4702-9504-98429AA4BD4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039ABA94-6947-4702-9504-98429AA4BD4D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://jaswindersingh.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = GleamBill\\GleamBill.csproj
+		SccProjectName1 = GleamBill
+		SccLocalPath1 = GleamBill
+		SccProjectUniqueName2 = ErrorLogger\\ErrorLogger.csproj
+		SccProjectName2 = ErrorLogger
+		SccLocalPath2 = ErrorLogger
+		SccProjectUniqueName3 = DBManager\\DBManager.csproj
+		SccProjectName3 = DBManager
+		SccLocalPath3 = DBManager
+	EndGlobalSection
+EndGlobal

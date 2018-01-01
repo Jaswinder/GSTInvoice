@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="GleamBill.View.HomeViewUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GleamBill.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="Purple"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+
+        </Style>
+    </UserControl.Resources>
+    <StackPanel>
+        <Grid Margin="100 100 100 10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+
+
+            </Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock FontSize="24">New</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock FontSize="24">Reports</TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <TextBlock FontSize="24">Tools</TextBlock>
+            </StackPanel>
+        </Grid>
+        <Grid Margin="100 0 100 100">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+
+            <StackPanel>
+                <Button x:Name="btnNewInvoice" Content="New &#xa;Invoice"/>
+                <Button x:Name="btnQuotation" Content="Quotation"/>
+                <Button x:Name="btnDeliveryNote" Content="Delivery &#xa;Note/&#xa;Challan"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="0 0 20 0">
+                <Button x:Name="btnTaxInvoice" Content="Tax &#xa;Invoice"/>
+                <Button x:Name="btnRetailInvoice" Content="Retail &#xa;Invoice"/>
+                <Button x:Name="btnExciseInvoice" Content="Excise &#xa;Invoice"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2">
+                <Button x:Name="btnReportInvoce" Content="Invoices"/>
+                <Button x:Name="btnReportClients" Content="Clients"/>
+                <Button x:Name="btnReportProducts" Content="Product&#xa;Services"/>
+                <Button x:Name="btnReportOthers" Content="Others"/>
+            </StackPanel>
+            <StackPanel Grid.Column="3">
+                <Button x:Name="btnToolCompany" Content="Company&#xa;Detail"/>
+                <Button x:Name="btnToolTaxes" Content="Taxes"/>
+                <Button x:Name="btnToolEmail" Content="Email"/>
+                <Button x:Name="btnToolSettings" Content="Settings"/>
+            </StackPanel>
+        </Grid>
+    </StackPanel>
+</UserControl>

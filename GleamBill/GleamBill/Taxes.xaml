@@ -1,0 +1,76 @@
+﻿<Window x:Class="GleamBill.Taxes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GleamBill"
+        mc:Ignorable="d"
+        Title="Taxes" Height="500" Width="650">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Background" Value="Purple"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="12"/>
+
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Margin" Value="5 0"/>
+            <Setter Property="Padding" Value="5"/>
+        </Style>
+        <Style TargetType="RichTextBox">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Height" Value="80"/>
+        </Style>
+
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="0"/>
+        </Style>
+    </Window.Resources>
+    <Border Padding="10">
+        <ScrollViewer >
+            <StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock FontSize="16" FontWeight="Bold" Margin="5" Padding="5" Background="LightGray">Add Tax</TextBlock>
+                </Grid>
+                <Grid Margin="100 10 100 10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+                        <ColumnDefinition Width="*">
+                        </ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <TextBlock FontSize="12">Tax Name</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="1">
+                        <TextBlock FontSize="12">Reports</TextBlock>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2">
+                        <TextBlock FontSize="12">Reports</TextBlock>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window>
